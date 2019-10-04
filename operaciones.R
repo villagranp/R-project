@@ -1,0 +1,9 @@
+c(10,11,15)
+mivec<-c(10,11,15)
+mivec
+mivec/2
+nuevovec<-mivec+mivec
+nuevovec
+nuevovec/2
+nvc<-c("mivec","nuevovec")
+nvc

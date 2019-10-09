@@ -57,4 +57,62 @@ final_matrix
 colnames(final_matrix) <- c("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado")
 rownames(final_matrix) <- c("T Platzi", "T Lectura", "Podcast")
 
+#---------------------------------------------------------------------
+#operadores logicos
 
+mtcars[mtcars$cyl<6,]
+mtcars[mtcars$cyl>6,]
+
+orangeec[orangeec$GDP.PC >= 15000,]
+orangeec[orangeec$Creat.Ind...GDP <= 2,]
+
+neworangeec <- subset(orangeec, Internet.penetration...population > 80 
+                      & Education.invest...GDP >= 4.5 )
+neworangeec
+
+
+neworangeec <- subset(orangeec, Internet.penetration...population > 80 
+                      & Education.invest...GDP >= 4.5,
+                      select = Creat.Ind...GDP)
+
+#se utiliza la libreria plyr para realizar el renombrado de una columna
+rename(orangeec, c("Creat.Ind...GDP" = "AporteEcNja"))
+
+
+#Factores
+
+Nivel_curso <- c("Basico","Medio","Avanzado")
+Nivel_curso
+
+head(mtcars)
+head(orangeec)
+
+tail(mtcars)
+tail(orangeec)
+
+#install.packages("dplyr")
+#library("dplyr")
+
+glimpse(orangeec)
+
+#Lista
+my_vector <- 1:8
+my_matrix <- matrix(1:9, ncol=3)
+my_df <- mtcars[1:4,]
+
+
+my_vector
+my_matrix
+my_df
+
+my_list <- list(my_vector, my_matrix, my_df)
+my_list
+
+
+
+
+
+
+# graficar con candela (NOT YET)
+w <- candela('ScatterPlot', data=mtcars, x='mpg', y='wt', color='disp')
+w
